@@ -9,6 +9,7 @@ public class Question implements Parcelable {
     public static final String DIFFICULTY_MEDIUM = "Medium";
     public static final String DIFFICULTY_HARD = "Hard";
 
+    private int id;
     private String question;
     private String option1;
     private String option2;
@@ -16,10 +17,11 @@ public class Question implements Parcelable {
     private String option4;
     private int answerNr;
     private String difficulty;
+    private int categoryID;
 
     //public Question(String a_is_correct, String a, String b, String c ,String d, int i){}
 
-    public Question(String question, String option1, String option2, String option3, String option4, int answerNr, String difficulty) {
+    public Question(String question, String option1, String option2, String option3, String option4, int answerNr, String difficulty, int categoryID) {
         this.question = question;
         this.option1 = option1;
         this.option2 = option2;
@@ -27,6 +29,7 @@ public class Question implements Parcelable {
         this.option4 = option4;
         this.answerNr = answerNr;
         this.difficulty = difficulty;
+        this.categoryID = categoryID;
     }
 
     public Question() {
@@ -34,6 +37,7 @@ public class Question implements Parcelable {
     }
 
     protected Question(Parcel in) {
+        id = in.readInt();
         question = in.readString();
         option1 = in.readString();
         option2 = in.readString();
@@ -41,10 +45,12 @@ public class Question implements Parcelable {
         option4 = in.readString();
         answerNr = in.readInt();
         difficulty = in.readString();
+        categoryID =in.readInt();
     }
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
         dest.writeString(question);
         dest.writeString(option1);
         dest.writeString(option2);
@@ -52,6 +58,7 @@ public class Question implements Parcelable {
         dest.writeString(option4);
         dest.writeInt(answerNr);
         dest.writeString(difficulty);
+        dest.writeInt(categoryID);
     }
 
     @Override
@@ -70,6 +77,14 @@ public class Question implements Parcelable {
             return new Question[size];
         }
     };
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getQuestion() {
         return question;
@@ -125,6 +140,14 @@ public class Question implements Parcelable {
 
     public void setDifficulty(String difficulty) {
         this.difficulty = difficulty;
+    }
+
+    public int getCategoryID() {
+        return categoryID;
+    }
+
+    public void setCategoryID(int categoryID) {
+        this.categoryID = categoryID;
     }
 
     public static String[] getAllDifficultyLevels(){
