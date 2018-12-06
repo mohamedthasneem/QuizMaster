@@ -94,10 +94,10 @@ public class QuizDbHelper extends SQLiteOpenHelper {
                 "A", "B", "C", "D", 1, Question.DIFFICULTY_EASY, Category.PROGRAMMING);
         addQuestion(q1);
         Question q2 = new Question(" GEOGRAPHY , Medium: B is correct",
-                "A", "B", "C", "D", 2, Question.DIFFICULTY_EASY, Category.GEOGRAPHY);
+                "A", "B", "C", "D", 2, Question.DIFFICULTY_MEDIUM, Category.GEOGRAPHY);
         addQuestion(q2);
         Question q3 = new Question(" Math , Hard: D is correct",
-                "A", "B", "C", "D", 4, Question.DIFFICULTY_EASY, Category.MATH);
+                "A", "B", "C", "D", 4, Question.DIFFICULTY_HARD, Category.MATH);
         addQuestion(q3);
         Question q4 = new Question(" Not in  , Easy: A is correct",
                 "A", "B", "C", "D", 1, Question.DIFFICULTY_EASY, 4);
@@ -106,7 +106,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
                 "A", "B", "C", "D", 2, Question.DIFFICULTY_EASY, 5);
         addQuestion(q5);
         Question q6 = new Question(" Not in  , Medium: B is correct",
-                "A", "B", "C", "D", 2, Question.DIFFICULTY_EASY, 2);
+                "A", "B", "C", "D", 2, Question.DIFFICULTY_MEDIUM, 2);
         addQuestion(q6);
     }
 
