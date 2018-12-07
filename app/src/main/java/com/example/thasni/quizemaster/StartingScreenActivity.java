@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.app.Activity;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -81,7 +82,7 @@ public class StartingScreenActivity extends AppCompatActivity {
         List<Category> categories = dbHelper.getAllCategories();
 
         ArrayAdapter<Category> adapterCategories = new ArrayAdapter<>(this,
-                android.R.layout.simple_spinner_item, categories);
+                android.R.layout.simple_spinner_dropdown_item, categories);
         adapterCategories.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerCategory.setAdapter(adapterCategories);
     }
@@ -90,7 +91,7 @@ public class StartingScreenActivity extends AppCompatActivity {
         String[] difficultyLevels = Question.getAllDifficultyLevels();
 
         ArrayAdapter<String> adapterDifficulty = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item, difficultyLevels);
+                android.R.layout.simple_spinner_dropdown_item, difficultyLevels);
         adapterDifficulty.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerDifficulty.setAdapter(adapterDifficulty);
     }
